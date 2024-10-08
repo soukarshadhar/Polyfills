@@ -1,6 +1,6 @@
 Array.prototype.myMap = function (cb) {
   if (typeof cb !== "function")
-    throw new Error("Callback is not passed to myMap method");
+    throw new Error(`${cb} is not a function passed to myMap`);
 
   const arr = [];
   for (let i = 0; i < this.length; i++) {
@@ -9,4 +9,8 @@ Array.prototype.myMap = function (cb) {
   return arr;
 };
 
-console.log([1, 2, 3, 4].myMap((item) => item * 2));
+const a = [1, 2, 3, 4];
+
+const arr = [1, 2, 3, 4].map((item) => item * 2);
+const myArr = [1, 2, 3, 4].myMap((item) => item * 2);
+console.log(arr, myArr);

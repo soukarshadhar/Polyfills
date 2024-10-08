@@ -14,7 +14,9 @@ Array.prototype.myConcat = function (...args) {
   return arr;
 };
 
-const result = [1, 2, 3].myConcat(
+const firstArr = [1, 2, 3];
+
+const arr = firstArr.concat(
   4,
   [5, 6],
   [7, [8, 9]],
@@ -24,4 +26,16 @@ const result = [1, 2, 3].myConcat(
   undefined,
   [12, [13, 14, [15]]]
 );
-console.log(result);
+
+const myArr = firstArr.myConcat(
+  4,
+  [5, 6],
+  [7, [8, 9]],
+  [10, 11],
+  null,
+  "",
+  undefined,
+  [12, [13, 14, [15]]]
+);
+
+console.log(arr, myArr);

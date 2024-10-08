@@ -1,6 +1,6 @@
 Array.prototype.myEvery = function (cb) {
   if (typeof cb !== "function")
-    throw new Error("Callback is not passed to myFind method");
+    throw new Error(`${cb} is not a function passed to myEvery`);
 
   let canElementPass = true;
   let i = 0;
@@ -13,7 +13,12 @@ Array.prototype.myEvery = function (cb) {
   return canElementPass;
 };
 
-const b = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].myEvery((item) => {
+const arr = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].every((item) => {
   return item.x < 1;
 });
-console.log(b);
+
+const myArr = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].myEvery(
+  (item) => item.x < 1
+);
+
+console.log(arr, myArr);

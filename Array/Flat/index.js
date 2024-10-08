@@ -18,6 +18,22 @@ Array.prototype.myFlat = function (depth = 1) {
   return arr;
 };
 
-const result = [1, , 3, undefined, ["a", , ["d", , "e"]], null].flat("a");
-const a = [1, , 3, undefined, ["a", , ["d", , "e"]], null].myFlat(null);
-console.log(result, a);
+const arr = [
+  1,
+  ,
+  3,
+  undefined,
+  ["a", , ["d", , "e"], [4, [5, [6]]]],
+  null,
+].flat(3);
+
+const myArr = [
+  1,
+  ,
+  3,
+  undefined,
+  ["a", , ["d", , "e"], [4, [5, [6]]]],
+  null,
+].myFlat(3);
+
+console.log(arr, myArr);

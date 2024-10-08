@@ -1,5 +1,6 @@
 Array.prototype.mySome = function (cb) {
-  if (typeof cb !== "function") throw new Error("Callback is not a function");
+  if (typeof cb !== "function")
+    throw new Error(`${cb} is not a function passed to mySome`);
 
   let canElementPass = false;
   let i = 0;
@@ -12,7 +13,11 @@ Array.prototype.mySome = function (cb) {
   return canElementPass;
 };
 
-const b = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].mySome((item) => {
-  return item.x < 2;
-});
-console.log(b);
+const arr = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].some(
+  (item) => item.x < 2
+);
+
+const myArr = [{ x: 0 }, { x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }].mySome(
+  (item) => item.x < 2
+);
+console.log(arr, myArr);
