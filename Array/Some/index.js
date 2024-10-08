@@ -1,6 +1,6 @@
 Array.prototype.mySome = function (cb) {
   if (typeof cb !== "function")
-    throw new Error(`${cb} is not a function passed to mySome`);
+    throw new TypeError(`${cb} is not a function passed to mySome`);
 
   let canElementPass = false;
   let i = 0;

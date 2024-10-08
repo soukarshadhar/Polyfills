@@ -1,6 +1,6 @@
 Array.prototype.myEvery = function (cb) {
   if (typeof cb !== "function")
-    throw new Error(`${cb} is not a function passed to myEvery`);
+    throw new TypeError(`${cb} is not a function passed to myEvery`);
 
   let canElementPass = true;
   let i = 0;

@@ -1,6 +1,6 @@
 Array.prototype.myFilter = function (cb) {
   if (typeof cb !== "function")
-    throw new Error(`${cb} is not a function passed to myFilter`);
+    throw new TypeError(`${cb} is not a function passed to myFilter`);
 
   const arr = [];
   for (let i = 0; i < this.length; i++) {

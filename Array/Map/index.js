@@ -1,6 +1,6 @@
 Array.prototype.myMap = function (cb) {
   if (typeof cb !== "function")
-    throw new Error(`${cb} is not a function passed to myMap`);
+    throw new TypeError(`${cb} is not a function passed to myMap`);
 
   const arr = [];
   for (let i = 0; i < this.length; i++) {
